@@ -1,0 +1,14 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+    Enregistrement ! | {{ parent() }}
+{% endblock %}
+
+{% block main %}
+    <h2>Add a User</h2>
+    {# @todo créer une série #}
+    {{ form_start(registerForm) }}
+    {{ form_widget(registerForm) }}
+    <button type="submit">Enregistrer</button>
+    {{ form_end(registerForm) }}
+{% endblock %}

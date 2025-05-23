@@ -1,0 +1,21 @@
+{% extends 'layout.html.twig' %}
+
+{% block main %}
+<h1>Liste des idées publiées</h1>
+
+<ul>
+    {% for idea in ideas %}
+        {% if idea.isPublished %}
+            <li>
+                <div class="idea">
+                    <a href="{{ path('detail', {id: idea.id}) }}">
+                        <h3>{{ idea.title }}</h3>
+                    </a>
+                </div>
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+{% endblock %}
+

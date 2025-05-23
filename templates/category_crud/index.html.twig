@@ -1,0 +1,38 @@
+
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+   Liste des Categories {{ parent() }}
+{% endblock %}
+
+{% block main %}
+    <h1>Liste des Categories</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for category in categories %}
+            <tr>
+                <td>{{ category.id }}</td>
+                <td>{{ category.name }}</td>
+                <td>
+                    <a href="{{ path('app_category_c_r_u_d_show', {'id': category.id}) }}">show</a>
+                    <a href="{{ path('app_category_c_r_u_d_edit', {'id': category.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_category_c_r_u_d_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+  New Category {{ parent() }}
+{% endblock %}
+
+{% block main %}
+    <h1>Create new Category</h1>
+
+{{ form_start(form) }}
+
+    {{ form_widget(form) }}
+    <button>Test Submit</button>
+{{ form_end(form) }}
+
+    <a href="{{ path('app_category_c_r_u_d_index') }}" class="btn btn-secondary">Back to list</a>
+{% endblock %}

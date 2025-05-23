@@ -1,0 +1,17 @@
+{% extends "layout.html.twig" %}
+
+{% block main %}
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="flash flash-{{ label }}">{{ message }}</div>
+        {% endfor %}
+    {% endfor %}
+
+    {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+        <h1>Welcome to Bucket-List {{ app.user.username }} !</h1> 
+    {% else %}
+        <h1>Welcome to Bucket-List!</h1> 
+    {% endif %}
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+{% endblock %}
